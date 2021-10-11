@@ -1,0 +1,43 @@
+<div>
+    <div class="nav">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+            <div class="nav-title">
+                Maxeon
+            </div>
+        </div>
+        <div class="nav-btn">
+            <label for="nav-check">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+        </div>
+
+        <div class="nav-links">
+            <a href="" target="_blank">Products</a>
+            <a href="" target="_blank">Features</a>
+            <a href="" target="_blank">Use Cases</a>
+            <a href="" target="_blank">Pricing</a>
+            <a href="" target="_blank" class="active">Login</a>
+        </div>
+    </div>
+
+    <div class="chat-box" [ngClass]="{'start_chat': startChat ,'no_chat': !startChat}">
+        <app-chat-box></app-chat-box>
+    </div>
+    <div class="container">
+        <h3>Where<br>words<br>fail,<br>Music<br>speaks</h3>
+
+    </div>
+
+    <a href="#" class="float" (click)="openChat()">
+        <div *ngIf="startChat">
+            <img src="../assets/Sparrow Bird.png">
+        </div>
+        <div [ngClass]="{'start_chat': startChat ,'no_chat': !startChat}" class="close-option">
+            <mat-icon>close</mat-icon>
+
+        </div>
+    </a>
+</div>

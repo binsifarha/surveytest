@@ -1,0 +1,42 @@
+<div class="chat-window">
+    <div class="chat-heading">
+        <p class="chat-title">Hi There</p>
+        <p class="chat-subtile" [ngClass]="{'start_chat': startChat ,'no_chat': !startChat}">Hello As Us Anything, Share Your Feedback</p>
+        <p class="chat-subtile" [ngClass]="{'start_chat': !startChat,'no_chat': startChat}">This team typically replies in few minutes</p>
+    </div>
+
+    <div class="start-conversation" [ngClass]="{'start_chat': startChat,'no_chat': !startChat}">
+        <p class="chat-title">Start a Conversation</p>
+        <p class="chat-subtile">This team typically replies in few minutes</p>
+        <button (click)=startConversation();>
+            New Conversation 
+        
+        </button>
+    </div>
+
+
+    <div class="chat-area" [ngClass]="{'start_chat': !startChat,'no_chat': startChat}">
+        <div style="    height: 272px;
+        overflow: auto;margin-top: 12px;">
+            <div class="chatting" *ngFor="let chat of chatList; ">
+                <div class="received" *ngIf="chat.type === 'recieve'">
+                    <p class="received-bubble">
+                        {{chat.advice}}
+                    </p>
+                </div>
+                <div class="sent" *ngIf="chat.type === 'sent'">
+                    <div class="circle"></div>
+                    <p class="sent-bubble">{{chat.advice}}</p>
+                </div>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="send-message">
+            <input type="text" placeholder="Write a reply...." [(ngModel)]="value">
+            <button (click)="sendChat()">
+                <mat-icon >send</mat-icon>
+
+            </button>
+        </div>
+    </div>
+</div>

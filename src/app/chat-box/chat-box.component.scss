@@ -1,0 +1,162 @@
+@import "../../assets/colors.scss";
+.start_chat {
+    display: none;
+}
+
+.no_chat {
+    display: block;
+}
+
+.chat-window {
+    background-color: white;
+    padding: 12px;
+    border-radius: 4px;
+    box-shadow: 7px 5px 10px #999;
+    .circle {
+        height: 25px;
+        width: 25px;
+        border-radius: 50px;
+        background-color: $dark;
+        float: left;
+        margin-top: 6px;
+        margin-right: 10px;
+    }
+    .chat-heading {
+        background-color: $backgound-blue;
+        padding: 2px 44px 2px 19px;
+        color: white;
+        border-radius: 7px;
+        .chat-title {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        .chat-subtile {
+            font-size: 11px;
+            word-spacing: 3px;
+            line-height: 23px;
+        }
+    }
+    .start-conversation {
+        margin: 17px 28px;
+        .chat-title {
+            font-size: 16px;
+            margin-bottom: 0px;
+            font-weight: 600;
+        }
+        .chat-subtile {
+            font-size: 10px;
+            word-spacing: 3px;
+            line-height: 23px;
+            margin-top: 4px;
+        }
+        button {
+            background-color: $green;
+            padding: 10px 20px;
+            border: 1px solid $green;
+            border-radius: 50px;
+            color: white;
+            font-size: 11px;
+        }
+    }
+    .chat-area {
+        .chatting {
+            margin-top: 16px;
+            padding-right: 9px;
+            div.sent {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            div:not(.sent) {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+            .sent-bubble {
+                border-bottom-left-radius: 3px;
+                border-bottom-right-radius: 3px;
+                border-top-right-radius: 3px;
+            }
+            .received-bubble {
+                border-bottom-left-radius: 3px;
+                border-bottom-right-radius: 3px;
+                border-top-left-radius: 3px;
+            }
+            .sent-bubble,
+            .received-bubble {
+                max-width: 70%;
+                padding: 10px;
+                margin: 10px 0 20px;
+                text-align: left;
+            }
+            .sent-bubble {
+                background-color: $light;
+                color: $dark;
+                font-size: 10px;
+                word-spacing: 3px;
+                line-height: 23px;
+                border-radius: 5px;
+                margin-top: 4px;
+                position: relative;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                    width: 0px;
+                    height: 0px;
+                    border-top: 0px solid transparent;
+                    border-bottom: 14px solid transparent;
+                    border-right: 0px solid $light;
+                    border-left: 10px solid $light;
+                }
+            }
+            .received-bubble {
+                background-color: $dark;
+                color: $light;
+                font-size: 10px;
+                word-spacing: 3px;
+                border-radius: 5px;
+                line-height: 23px;
+                margin-top: 4px;
+                position: relative;
+                /* BUBBLE ARROW RECEIVED */
+                &:before {
+                    content: "";
+                    position: absolute;
+                    bottom: -10px;
+                    right: 0;
+                    width: 0px;
+                    height: 0px;
+                    border-top: 0px solid transparent;
+                    border-bottom: 14px solid transparent;
+                    border-left: 0px solid $dark;
+                    border-right: 10px solid $dark;
+                }
+            }
+        }
+    }
+    .send-message {
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+        padding-top: 13px;
+        input {
+            width: 100%;
+            float: left;
+            border: 0px;
+            padding-left: 16px;
+        }
+        button {
+            padding: 4px 13px;
+            border: 0px;
+            background: white;
+            opacity: 0.7;
+            &:hover {
+                background-color: $light;
+                color: $dark;
+                opacity: 0.9;
+            }
+        }
+    }
+}
